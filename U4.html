@@ -1,0 +1,601 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap">
+
+  <style type="text/css">
+
+        * {
+            /* webkit-box-sizing:border-box;
+            moz-box-sizing:border-box; */
+            box-sizing:border-box;
+            
+          }
+                                                                                     
+        body {
+            font-family: Prompt;
+            font-size: 20px;
+            color: black;
+            background-image: linear-gradient(to bottom right, #c02425,#f0cb35);
+        }
+
+        .p1 {
+            font-family: Prompt;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: inherit;
+            width: 110%;
+            /* margin: 0.5rem auto; */
+            padding: 1rem;
+            height: 100px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            /* border-radius: 8px; */
+            overflow: hidden;
+            color: #ffffff;
+            background-color : rgb(76, 74, 80);
+            /* opacity: 0.8; */
+        }
+
+        .p2 {
+            font-family: Prompt;
+            font-size: 20px;
+            text-align: right;
+        }
+
+        .inputTable {
+            width: 90px;
+            height: 25px;
+        }
+
+        .input {
+            box-sizing: border-box;
+            width: 30%;
+            height: 25px;
+            padding-left: 10px;
+            padding-right: 5px;
+            border: 1px solid #d6d6d6;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .dateinput {
+            box-sizing: border-box;
+            width: 70%;
+            height: 45px;
+            padding-left: 10px;
+            padding-right: 5px;
+            border: 1px solid #d6d6d6;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            max-width: 100%;
+            height: auto!important;
+        }
+
+        .head {
+            width: 98%;
+            margin: 2rem auto;
+            padding: 3rem;
+            height: 250px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        .content {
+            width: 98%;
+            margin: 1rem auto;
+            padding: 3rem;
+            height: 450px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        .contentHome {
+            width: 98%;
+            margin: 1rem auto;
+            padding: 3rem;
+            height: 600px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /*เงา*/
+            border-radius: 10px; /*ขอบมุม*/
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        .contentTable {
+            width: 98%;
+            margin: 1rem auto;
+            padding: 3rem;
+            height: 850px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /*เงา*/
+            border-radius: 10px; /*ขอบมุม*/
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        .date {
+            width: 98%;
+            margin: 1rem auto;
+            padding: 3rem;
+            height: 180px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /*เงา*/
+            border-radius: 10px; /*ขอบมุม*/
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        .footer {
+            width: 98%;
+            margin: 1rem auto;
+            padding: 45px;
+            height: 320px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /*เงา*/
+            border-radius: 10px; /*ขอบมุม*/
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        .button {
+            align-content: center;
+            justify-content: center;
+        }
+
+        .button1 {
+          background-color: blue;
+          border: none;
+          color: white;
+          padding: 16px 50px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 20px;
+          margin: 4px 290px;
+          transition-duration: 0.4s;
+          cursor: pointer;
+          width: 50%;
+      }
+
+      .button2 {
+          background-color: white; 
+          color: red; 
+          border: 3px solid blue;
+          border-radius: 20px;
+      }
+
+      .button2:hover {
+          background-color: blue;
+          color: white;
+      }
+      .custom-file-upload {
+          border: 1px solid #ccc;
+          display: inline-block;
+          padding: 6px 12px;
+          cursor: pointer;
+      }
+
+  </style>
+  </head>
+
+<body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    
+
+  div>
+    
+  <header class="p1">
+    <form action="/action_page.php">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-collection" viewBox="0 0 16 16">
+        <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"/></path>
+      </svg>
+      <i class="bi bi-collection"></i>&nbsp;Attachments&nbsp;
+    
+      <input type="file" id="myFile" name="filename" multiple>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      
+      <b>Faculty of Science and Technology</b>&nbsp;
+
+      <i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;
+
+      <button onclick ="window.location = 'http://เว็บไซต์'" style="width: 60px" class="btn btn-primary"> save </button>&nbsp;
+
+      <i class="fa fa-reply-all" aria-hidden="true"></i>
+
+    </form>
+  </header>
+
+
+  <form class="container" onsubmit="return validate(this)">
+    <div class="head">
+      <img src="https://upload.wikimedia.org/wikipedia/th/thumb/3/33/Thammasat_University_Logo_with_Wordings.png/260px-Thammasat_University_Logo_with_Wordings.png" width="270" height="60" style="position:absolute; right:200px;">
+      <p style="font-size: 55px;"><b>&nbsp;คำร้องขอเพิ่ม-ถอน รายวิชา</b></p>
+      <p style="font-size: 30px;"><b>&nbsp;คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์ ศูนย์รังสิต</b></p>
+
+    </div>
+
+    <div class="date">
+      <p style="font-size: 18px;"><b> กรุณากรอกข้อมูลให้ถูกต้องและครบถ้วน ( เครื่องหมาย <label style="color: red;">*</label> แทน บังคับใส่ข้อมูล )</b></p>
+
+      <div class="form-row" class="form-group col-md-3">
+          <label for="day"><span style="color: red;">* </span><b>วัน/เดือน/ปี</b></label>
+              <input type="date" id="date" name="date" style="width: 185px; max-width: 190px;" >
+      </div>
+    </div>
+
+    <div class="content">
+      <h2><i style="font-size:35px" class="fa"></i><b>ประวัตินักศึกษา</b></h2><br>
+
+      <div class="form-group col-md-5">
+        <label for="tname"><span style="color: red;">* </span>คำนำหน้าชื่อ</label>
+          <select name="tname" id="tname" class="custom-select mr-sm-2">
+              <option selected>เลือก...</option>
+              <option value="mr">นาย</option>
+              <option value="miss">นาง</option>
+              <option value="ms">นางสาว</option>
+          </select>
+      </div><br>
+
+      <div class="form-group col-md-5">
+          <label for="name"><span style="color: red;">* </span> ชื่อจริง-นามสกุล</label>
+          <input type="text" id="name" name="name" class="form-control mb-2 mr-sm-2" placeholder="ชื่อจริง-นามสกุล...."><br>
+          
+          <label for="idstu"><span style="color: red;">* </span> เลขทะเบียนนักศึกษา</label>
+          <input type="text" id="idstu" name="idstu" class="form-control mb-2 mr-sm-2" placeholder="เลขทะเบียนนักศึกษา...."><br>
+      </div>
+
+      <div class="form-group col-md-5">
+        <label for="yearstu"><span style="color: red;">* </span> ชั้นปีที่</label>
+          <select name="yearstu" id="yearstu" class="custom-select mr-sm-2">
+            <option selected>เลือก...</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select><br><br>
+
+        <label for="saka"><span style="color: red;">* </span> สาขาวิชา</label>
+            <select name="saka" id="saka" class="custom-select mr-sm-2">
+              <option selected>เลือก...</option>
+              <option value="1">คณิตศาสตร์และสถิติ</option>
+              <option value="2">ฟิสิกส์</option>
+              <option value="3">เคมี</option>
+              <option value="4">วิทยาการคอมพิวเตอร์</option>
+              <option value="5">เทคโนโลยีการเกษตร</option>
+              <option value="6">วิทยาศาสตร์สิ่งแวดล้อม</option>
+              <option value="7">วิทยาศาสตร์และเทคโนโลยีการอาหาร</option>
+              <option value="8">เทคโนโลยีวัสดุและสิ่งทอ</option>
+              <option value="9">เทคโนโลยีชีวภาพ</option>
+              <option value="10">เทคโนโลยีเพื่อการพัฒนายั่งยืน</option>
+            </select>
+      </div><br>
+
+      <div class="form-group col-md-5">
+        <label for="teacher"><span style="color: red;">* </span> อาจารย์ที่ปรึกษา</label>
+          <input type="text" id="teacher" name="teacher" class="form-control mb-2 mr-sm-2" placeholder="อาจารย์ที่ปรึกษา....">
+      </div>
+    </div>
+
+    <div class="contentHome">
+      <h2><i style="font-size:35px" class="fa"></i><b>ที่อยู่นักศึกษา</b></h2><br>
+
+      <div class="form-row">
+			  <div class="form-group col-md-5">
+          <label for="numberhome"><span style="color: red;">*</span> บ้านเลขที่</label>
+          <input type="text" class="form-control" id="numberhome" placeholder="บ้านเลขที่....">
+			  </div><br>
+			  <div class="form-group col-md-5">
+          <label for="numbermuhome"><span style="color: red;">*</span> หมู่ที่</label>
+          <input type="text" class="form-control" id="numbermuhome" placeholder="หมู่ที่....">
+			  </div><br>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-5">
+					<label for="inputAddress"><span style="color: red;">*</span> แขวง/ตำบล</label>
+					<input type="text" class="form-control" id="inputAddress" placeholder="แขวง/ตำบล....">
+				</div><br>
+				<div class="form-group col-md-5">
+					<label for="inputAddress2"><span style="color: red;">*</span> เขต/อำเภอ</label>
+					<input type="text" class="form-control" id="inputAddress2" placeholder="เขต/อำเภอ....">
+				</div><br>
+			</div>	
+			<div class="form-row">
+			  <div class="form-group col-md-5">
+          <label for="inputCity"><span style="color: red;">*</span> จังหวัด</label>
+          <input type="text" class="form-control" id="inputCity" placeholder="จังหวัด....">
+			  </div><br>
+			  <div class="form-group col-md-5">
+          <label for="inputnumState"><span style="color: red;">*</span> รหัสไปรษณีย์</label>
+          <input type="text" class="form-control" id="inputnumState" placeholder="รหัสไปรษณีย์....">
+			  </div><br>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-5">
+					<label for="numbertel"><span style="color: red;">*</span> โทรศัพท์มือถือ</label>
+					<input type="text" class="form-control" id="numbertel" placeholder="โทรศัพท์มือถือ....">
+				</div><br>
+				<div class="form-group col-md-5">
+					<label for="numbertelhome"><span style="color: red;">*</span> โทรศัพท์บ้าน(ถ้ามี)</label>
+					<input type="text" class="form-control" id="numbertelhome" placeholder="โทรศัพท์บ้าน(ถ้ามี)....">
+				</div>
+			</div><br>
+      <p style="color: red;"><b>หมายเหตุ: ถ้าไม่มีให้พิมพ์ เครื่องหมาย ( - )</b></p>
+    
+    </div>
+
+    <div class="contentTable">
+      <h2><i style="font-size:35px" class="fa"></i><b> รายละเอียดการเพิ่ม - ถอนรายวิชา</b></h2><br>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="addSub"><span style="color: red;">*</span> จำนวนขอเพิ่มรายวิชา</label>
+            <input type="number" class="input" id="addSub" style="width: 60px">
+          <label for="deSub"><span style="color: red;">*</span> จำนวนขอถอนรายวิชา</label>
+            <input type="number" class="input" id="deSub" style="width: 60px">
+        </div><br>
+
+        <table class="table">
+          <thead class="table-secondary">
+            <tr> <!-- แถว -->
+              <th>ลำดับ</th><!-- หัว -->
+              <th>ต้องการเพิ่ม/ถอน</th>
+              <th>รหัสวิชา</th>
+              <th>ชื่อวิชา</th>
+              <th>Section</th>
+              <th>วัน/เวลา</th>
+              <th>หน่วยกิต</th>
+              <th>ชื่อผู้สอน</th>
+              <th>ผู้สอนอนุญาต</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th scope="row">1.</th>
+            <td><div class="form-group col-md-2">
+                  <select style="width: 600px;max-width: 90px;" placeholder="เลือก">
+                    <option selected>เลือก...</option>
+                    <option value="1">ขอเพิ่ม</option>
+                    <option value="2">ขอถอน</option>
+                  </select>
+                </div></td>
+
+            <td><input type="text" class="form-control inputTable" id="numSub"></td>
+            <td><input type="text" class="form-control inputTable" id="Sub"></td>
+            <td><input type="text" class="form-control inputTable" id="secSub"></td>
+            <td><input type="text" class="form-control inputTable" id="datetime"></td>
+            <td><input type="number" class="form-control inputTable" id="digitSub"></td>
+            <td><input type="text" class="form-control inputTable" id="teachSub"></td>
+            <td><input type="checkbox" name="form-control inputTable" id="agreeTeach">&nbsp;&nbsp;
+                    <label for="agreeTeach"> อนุญาต</label></td>
+            </tr>
+
+            <tr>
+              <th scope="row">2.</th>
+            <td><div class="form-group col-md-2">
+                  <select style="width: 600px;max-width: 90px;" placeholder="เลือก">
+                    <option selected>เลือก...</option>
+                    <option value="1">ขอเพิ่ม</option>
+                    <option value="2">ขอถอน</option>
+                  </select>
+                </div></td>
+
+            <td><input type="text" class="form-control inputTable" id="numSub"></td>
+            <td><input type="text" class="form-control inputTable" id="Sub"></td>
+            <td><input type="text" class="form-control inputTable" id="secSub"></td>
+            <td><input type="text" class="form-control inputTable" id="datetime"></td>
+            <td><input type="number" class="form-control inputTable" id="digitSub"></td>
+            <td><input type="text" class="form-control inputTable" id="teachSub"></td>
+            <td><input type="checkbox" name="form-control inputTable" id="agreeTeach">&nbsp;&nbsp;
+                    <label for="agreeTeach"> อนุญาต</label></td>
+            </tr>
+
+            <tr>
+              <th scope="row">3.</th>
+            <td><div class="form-group col-md-2">
+                  <select style="width: 600px;max-width: 90px;" placeholder="เลือก">
+                    <option selected>เลือก...</option>
+                    <option value="1">ขอเพิ่ม</option>
+                    <option value="2">ขอถอน</option>
+                  </select>
+                </div></td>
+
+            <td><input type="text" class="form-control inputTable" id="numSub"></td>
+            <td><input type="text" class="form-control inputTable" id="Sub"></td>
+            <td><input type="text" class="form-control inputTable" id="secSub"></td>
+            <td><input type="text" class="form-control inputTable" id="datetime"></td>
+            <td><input type="number" class="form-control inputTable" id="digitSub"></td>
+            <td><input type="text" class="form-control inputTable" id="teachSub"></td>
+            <td><input type="checkbox" name="form-control inputTable" id="agreeTeach">&nbsp;&nbsp;
+                    <label for="agreeTeach"> อนุญาต</label></td>
+            </tr>
+
+            <tr>
+              <th scope="row">4.</th>
+            <td><div class="form-group col-md-2">
+                  <select style="width: 600px;max-width: 90px;" placeholder="เลือก">
+                    <option selected>เลือก...</option>
+                    <option value="1">ขอเพิ่ม</option>
+                    <option value="2">ขอถอน</option>
+                  </select>
+                </div></td>
+
+            <td><input type="text" class="form-control inputTable" id="numSub"></td>
+            <td><input type="text" class="form-control inputTable" id="Sub"></td>
+            <td><input type="text" class="form-control inputTable" id="secSub"></td>
+            <td><input type="text" class="form-control inputTable" id="datetime"></td>
+            <td><input type="number" class="form-control inputTable" id="digitSub"></td>
+            <td><input type="text" class="form-control inputTable" id="teachSub"></td>
+            <td><input type="checkbox" name="form-control inputTable" id="agreeTeach">&nbsp;&nbsp;
+                  <label for="agreeTeach"> อนุญาต</label></td>
+            </tr>
+
+            <tr>
+              <th scope="row">5.</th>
+            <td><div class="form-group col-md-2">
+                  <select style="width: 600px;max-width: 90px;" placeholder="เลือก">
+                    <option selected>เลือก...</option>
+                    <option value="1">ขอเพิ่ม</option>
+                    <option value="2">ขอถอน</option>
+                  </select>
+                </div></td>
+
+            <td><input type="text" class="form-control inputTable" id="numSub"></td>
+            <td><input type="text" class="form-control inputTable" id="Sub"></td>
+            <td><input type="text" class="form-control inputTable" id="secSub"></td>
+            <td><input type="text" class="form-control inputTable" id="datetime"></td>
+            <td><input type="number" class="form-control inputTable" id="digitSub"></td>
+            <td><input type="text" class="form-control inputTable" id="teachSub"></td>
+            <td><input type="checkbox" name="form-control inputTable" id="agreeTeach">&nbsp;&nbsp;
+                  <label for="agreeTeach"> อนุญาต</label></td>
+            </tr>
+
+            <tr>
+              <th scope="row">6.</th>
+            <td><div class="form-group col-md-2">
+                  <select style="width: 600px;max-width: 90px;" placeholder="เลือก">
+                    <option selected>เลือก...</option>
+                    <option value="1">ขอเพิ่ม</option>
+                    <option value="2">ขอถอน</option>
+                  </select>
+                </div></td>
+
+            <td><input type="text" class="form-control inputTable" id="numSub"></td>
+            <td><input type="text" class="form-control inputTable" id="Sub"></td>
+            <td><input type="text" class="form-control inputTable" id="secSub"></td>
+            <td><input type="text" class="form-control inputTable" id="datetime"></td>
+            <td><input type="number" class="form-control inputTable" id="digitSub"></td>
+            <td><input type="text" class="form-control inputTable" id="teachSub"></td>
+            <td><input type="checkbox" name="form-control inputTable" id="agreeTeach">&nbsp;&nbsp;
+                  <label for="agreeTeach"> อนุญาต</label></td>
+            </tr>
+
+            <tr>
+              <th scope="row">7.</th>
+            <td><div class="form-group col-md-2">
+                  <select style="width: 600px;max-width: 90px;" placeholder="เลือก">
+                    <option selected>เลือก...</option>
+                    <option value="1">ขอเพิ่ม</option>
+                    <option value="2">ขอถอน</option>
+                  </select>
+                </div></td>
+
+            <td><input type="text" class="form-control inputTable" id="numSub"></td>
+            <td><input type="text" class="form-control inputTable" id="Sub"></td>
+            <td><input type="text" class="form-control inputTable" id="secSub"></td>
+            <td><input type="text" class="form-control inputTable" id="datetime"></td>
+            <td><input type="number" class="form-control inputTable" id="digitSub"></td>
+            <td><input type="text" class="form-control inputTable" id="teachSub"></td>
+            <td><input type="checkbox" name="form-control inputTable" id="agreeTeach">&nbsp;&nbsp;
+                  <label for="agreeTeach"> อนุญาต</label></td>
+            </tr>
+
+            <tr>
+              <th scope="row">8.</th>
+            <td><div class="form-group col-md-2">
+                  <select style="width: 600px;max-width: 90px;" placeholder="เลือก">
+                    <option selected>เลือก...</option>
+                    <option value="1">ขอเพิ่ม</option>
+                    <option value="2">ขอถอน</option>
+                  </select>
+                </div></td>
+
+            <td><input type="text" class="form-control inputTable" id="numSub"></td>
+            <td><input type="text" class="form-control inputTable" id="Sub"></td>
+            <td><input type="text" class="form-control inputTable" id="secSub"></td>
+            <td><input type="text" class="form-control inputTable" id="datetime"></td>
+            <td><input type="number" class="form-control inputTable" id="digitSub"></td>
+            <td><input type="text" class="form-control inputTable" id="teachSub"></td>
+            <td><input type="checkbox" name="form-control inputTable" id="agreeTeach">&nbsp;&nbsp;
+                  <label for="agreeTeach"> อนุญาต</label></td>
+            </tr>
+
+            <tr>
+              <th scope="row">9.</th>
+            <td><div class="form-group col-md-2">
+                  <select style="width: 600px;max-width: 90px;" placeholder="เลือก">
+                    <option selected>เลือก...</option>
+                    <option value="1">ขอเพิ่ม</option>
+                    <option value="2">ขอถอน</option>
+                  </select>
+                </div></td>
+
+            <td><input type="text" class="form-control inputTable" id="numSub"></td>
+            <td><input type="text" class="form-control inputTable" id="Sub"></td>
+            <td><input type="text" class="form-control inputTable" id="secSub"></td>
+            <td><input type="text" class="form-control inputTable" id="datetime"></td>
+            <td><input type="number" class="form-control inputTable" id="digitSub"></td>
+            <td><input type="text" class="form-control inputTable" id="teachSub"></td>
+            <td><input type="checkbox" name="form-control inputTable" id="agreeTeach">&nbsp;&nbsp;
+              <label for="agreeTeach"> อนุญาต</label></td>
+            </tr>
+
+            <tr>
+              <th scope="row">10.</th>
+            <td><div class="form-group col-md-2">
+                  <select style="width: 600px;max-width: 90px;" placeholder="เลือก">
+                    <option selected>เลือก...</option>
+                    <option value="1">ขอเพิ่ม</option>
+                    <option value="2">ขอถอน</option>
+                  </select>
+                </div></td>
+
+            <td><input type="text" class="form-control inputTable" id="numSub"></td>
+            <td><input type="text" class="form-control inputTable" id="Sub"></td>
+            <td><input type="text" class="form-control inputTable" id="secSub"></td>
+            <td><input type="text" class="form-control inputTable" id="datetime"></td>
+            <td><input type="number" class="form-control inputTable" id="digitSub"></td>
+            <td><input type="text" class="form-control inputTable" id="teachSub"></td>
+            <td><input type="checkbox" name="form-control inputTable" id="agreeTeach">&nbsp;&nbsp;
+              <label for="agreeTeach"> อนุญาต</label></td>  
+            </tr>
+                  
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer">
+        <label for="result"><h2><b><label style="color: red;">*</label> เหตุผลที่ขอเพิ่ม - ถอนรายวิชา</h2></b></label><br><br>
+
+          <input type="radio" name="form-control inputTable" id="agreeTeach1">&nbsp;&nbsp;
+            <label for="agreeTeach1"> ลงทะเบียนเรียนไม่ทัน </label><br>
+          <input type="radio" name="form-control inputTable" id="agreeTeach2">&nbsp;&nbsp;
+            <label for="agreeTeach2"> ศึกษาต่อไม่ไหว </label><br>
+          <input type="radio" name="form-control inputTable" id="agreeTeach3">&nbsp;&nbsp;
+            <label for="agreeTeach3"> ป่วย </label><br>
+          <input type="radio" name="form-control inputTable" id="agreeTeach4">&nbsp;&nbsp;
+            <label for="agreeTeach3"> อื่น ๆ (โปรดระบุเหตุผล) </label><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <textarea id="result" name="resulr" rows="5" cols="90"></textarea><br>
+          <br>
+          <!-- <script type="text/javascript" src="validate.js"></script> -->
+        <button class="button1 button2 p1" onclick="submit();"><b>submit</b></button>
+      </div>
+    
+  </form>
+  <script type="text/javascript" src="validate.js"></script>
+  
+</body>
+</html>

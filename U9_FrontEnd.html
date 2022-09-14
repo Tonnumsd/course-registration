@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity=" sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap">
+
+        <script src= "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+        integrity= "sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+
+        <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+
+        <script src="U7_BackEnd.js"></script>
+
+		<title>ติดตามการยื่นคำร้อง</title>
+			<style>
+                body {
+                    background-image: linear-gradient(to right, #c02425 , #f0cb35);
+                    font-family: "Prompt", sans-serif;
+                    font-size: 20px;
+                    color: #000000;   
+                    }
+
+				#grad2 {
+					height: 40px;
+					background: 	#2F4F4F;
+				}
+
+				.p1 {
+					font-family: 'Prompt', sans-serif;
+                    font-size: 40px;
+                    text-align: center;
+                    color: white;
+                    text-shadow: 1px 1px 4px black;
+                }
+
+                .p3 {
+                	font-family: 'Prompt', sans-serif;
+                	font-size: 17px;
+                	color: black;
+                	text-align: center;
+                    height: 15px;
+                    margin-top: 7px ;
+                    margin-bottom: 7px;
+                }
+
+                table {
+                    border-collapse: collapse;
+                    border-radius: 12px;
+                    width: 45%;
+                    text-align: center;
+                    margin: 398px;
+                    margin-top: 10px;
+                    margin-bottom: 2px;
+                }
+
+                th, td {
+                    padding: 8px;
+                    text-align: center;
+                    border-bottom: 0.5px solid #CDCDCD;
+                    font-family: 'Prompt', sans-serif;
+                }
+
+                #grad3 {
+                    background-color: white;
+                    border-radius: 12px;
+                    width: 430px;
+                    border: 0px;
+                    padding: 25px;
+                    margin: 508px;
+                    margin-top: 30px;
+                    margin-bottom: 300px;
+                }
+
+                .button {
+                    font-family: 'Prompt', sans-serif;
+                    background-color: #3FA9F5; /* blue*/
+                    border: none; 
+                    border-radius: 12px;
+                    color: white;
+                    padding: 15px 32px;
+                    text-align: center;
+                    margin: 0 auto;
+                    font-size: 10px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                    position: absolute;;
+                    text-decoration: none;
+                    outline: none;
+                    box-shadow: 0 5px #f5f5f5;
+                    float: right;
+                }
+
+                .reset {
+            	    font-family: 'Prompt', sans-serif;
+            	    background-color: #808080; /* gray*/
+                    float: left;
+        	        border: none; 
+                    border-radius: 12px;
+                    color: white;
+                    padding: 15px 32px;
+                    text-align: center;
+                    text-decoration: none;
+                    font-size: 16px;
+                    outline: none;
+                    box-shadow: 0 5px #f5f5f5;
+                }
+
+                .reset:hover {background-color: #696969}
+
+                .reset:active {
+                    background-color: #696969;
+                    box-shadow: 0 5px #e0e0e0;
+                    transform: translateY(0px);
+                }
+
+                .submit {
+           	        font-family: 'Prompt', sans-serif;
+            	    background-color: #3FA9F5; /* blue*/
+                    float: right;
+            	    border: none; 
+                    border-radius: 12px;
+                    color: white;
+                    padding: 15px 32px;
+                    text-align: center;
+                    text-decoration: none;
+                    font-size: 16px;
+                    outline: none;
+                    box-shadow: 0 5px #f5f5f5;
+                }
+
+                .submit:hover {background-color: #3399FF}
+
+                .submit:active {
+                   background-color: #3399FF;
+                   box-shadow: 0 5px #e0e0e0;
+                   transform: translateY(0px);
+                }
+
+                .submit:active {
+            	   float: right;
+                }
+
+            </style>
+	</head>
+
+    <body onload="loadDoc()">
+            <nav class="navbar navbar-expand-sm bg-dark">
+              <img src="./img/logo.png" alt="logo" width="15%" style="margin-left: 10px;">
+                <div class="container-fluid">
+                  <ul class="navbar-nav">
+                    <li class="nav-item" style="margin-left: 1110px;">
+                      <a class="nav-link" href="#">
+                        <!-- Close icon -->
+                        <button type="button" class="btn btn-outline-danger">close</button>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+            </nav>
+		    <br><br><br><br>
+
+		<p class="p1" style="text-align: center;">&nbsp;&nbsp;ติดตามผลการยื่นคำร้อง</p>
+            <table bgcolor="white">
+                <tr>
+                    <td><font size="4">อาจารย์ที่ปรึกษา</td>
+                        <th><font color="#32cd32"><font size="4">อนุมัติแล้ว</th>
+                </tr>
+
+                <tr>
+                    <td><font size="4">อาจารย์ผู้สอน</td>
+                        <th><font color="#6D6968"><font size="4">กำลังดำเนินการ</th>
+                </tr>
+
+                <tr>
+                    <td><font size="4">เจ้าหน้าที่คณะ</td>
+                        <th><font color="#6D6968"><font size="4">กำลังดำเนินการ</th>
+                </tr>
+
+                <tr>
+                    <td><font size="4">คณบดี</td>
+                        <th><font color="#6D6968"size="4">กำลังดำเนินการ</th>
+                </tr>
+            </table>
+
+            <form>
+                <div id="grad3">
+                   <p class="p3" style="margin-bottom: 15px;">หากคำร้องของท่านได้รับการอนุมัติ</p>
+                       <p class="p3">จากอาจารย์ที่ปรึกษาแล้วจะไม่สามารถยกเลิกคำร้องได้</p><br>
+                          <input class="reset" type="reset" value="decline" /><font size="7">
+	                  <input class="submit" type="submit" value="gohome" />
+                   <br>
+               </div>
+            </form>
+    </body>
+</html>
